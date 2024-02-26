@@ -1,0 +1,109 @@
+/* styles.css */
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+}
+
+
+
+.page-title {
+    font-size: 3em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust the color as needed */
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin top as needed */
+}
+
+
+/* Add CSS styles for the form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style the form inputs */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Change the background color of the button when hovered */
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style the file input button */
+input[type="file"] {
+    display: none; /* Hide the default file input button */
+}
+
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-wrapper button {
+    background-color: #008CBA; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Change the background color of the file input button when hovered */
+.file-input-wrapper button:hover {
+    background-color: #005F6B;
+}
+
+/* Style the file input label */
+.file-input-label {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Style the selected file name */
+.selected-file {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Style the error messages */
+.error-message {
+    color: red;
+}
