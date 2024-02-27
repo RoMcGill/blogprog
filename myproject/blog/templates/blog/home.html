@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Welcome to Our BlogBuilder</h1>
+      <p class="hero-subtitle">Explore fascinating articles and stories.</p>
+      <a href="{% url 'blog_content' %}"Blogs class="btn btn-primary">Explore Now</a>
+      <p>or</p>
+      <a href="{% url 'blog_content' %}"Blogs class="btn btn-primary">Get writing</a>
+
+
+
+    </div>
+  </section>
+</div>
+{% endblock %}

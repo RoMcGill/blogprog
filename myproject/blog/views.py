@@ -3,23 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import BlogPostForm
 from django.db import models
+from .models import BlogCreation
 
 
 def home(request):
-    return render(request, 'blog/base.html')
-
-
-def add_blog_post(request):
-    if request.method == 'POST':
-        form = BlogPostForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Process the form data and save the blog post as before
-            # ... your logic to save the blog post using form.cleaned_data ...
-            return render(request, 'blog/add_blog_success.html')
-    else:
-        form = BlogPostForm()
-    return render(request, 'blog/add_blog.html', {'form': form})
-
+    return render(request, 'blog/home.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -56,34 +44,31 @@ def logout_view(request):
     return redirect('home')
 
 
+
 def add_blog_post(request):
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
-            new_blog_post = BlogPost(
-                blog_name=form.cleaned_data['blog_name'],
-                title=form.cleaned_data['title'],
-                content=form.cleaned_data['content'],
-                picture=form.cleaned_data['picture'],
-                # Add additional fields as needed
-            )
+            new_blog_post = BlogCreation(  # Corrected
+            blog_name=form.cleaned_data['blog_name'],
+            title=form.cleaned_data['title'],
+            content=form.cleaned_data['content'],
+            author=request.user
+            # Add additional fields as needed
+        )
             new_blog_post.save()
-            return render(request, 'blog/add_blog_success.html')
+            return render(request, 'blog/base.html')
     else:
         form = BlogPostForm()
     return render(request, 'blog/add_blog.html', {'form': form})
 
 
-class Blogcration_view(models.Model):
-    blog_name = models.CharField(max_length=100)
-    title = models.CharField(max_length=100)
-    content = models.TextField()  # Use TextField for longer text content
-    picture = models.ImageField(upload_to='blog_posts/')  # Specify upload directory
-    # Add any additional fields as needed
+def blog_content(request):
+    posts = BlogCreation.objects.all()
+    context = {'posts': posts}
 
-    def __str__(self):
-        return self.title  # Customize the string representation of the model
+    if not posts.exists():  # Check if there are any posts before rendering
+        context['empty_message'] = "No blog posts found!"  # Set a context variable for an empty list message (optional)
 
-
-
+    return render(request, 'blog/blog_content.html', context)
 

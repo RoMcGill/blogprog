@@ -1,0 +1,25 @@
+<!-- blog_content.html -->
+<!-- blog_content.html -->
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+  {% if empty_message %}
+  <p class="empty-message">{{ empty_message }}</p>
+  {% else %}
+  <ul class="post-list">
+    {% for post in posts %}
+    <h1 class="blog-name">{{ post.blog_name }}</h1>
+    <li class="post-item">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <p class="post-author">Author: {{ post.author }}</p>
+      <p class="post-content">{{ post.content }}</p>
+      <!-- Add any additional fields you want to display -->
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endblock %}
+
