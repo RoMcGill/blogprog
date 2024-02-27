@@ -4,7 +4,9 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from .forms import BlogPostForm
 from django.db import models
 from .models import BlogCreation
-
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .forms import BlogPostEditForm
 
 def home(request):
     return render(request, 'blog/home.html')
@@ -72,3 +74,23 @@ def blog_content(request):
 
     return render(request, 'blog/blog_content.html', context)
 
+
+
+@login_required
+def edit_blog_post(request, post_id):
+    post = get_object_or_404(BlogCreation, id=post_id)
+
+    # Check if the current user is the author of the post
+    if request.user != post.author:
+        # Handle unauthorized access (e.g., redirect to homepage or show error message)
+        return redirect('homepage')
+
+    if request.method == 'POST':
+        form = BlogPostEditForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            return redirect('blog/blog_content.html')
+    else:
+        form = BlogPostEditForm(instance=post)
+
+    return render(request, 'blog/edit_blog_post.html', {'form': form})

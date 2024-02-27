@@ -10,4 +10,10 @@
     {{ form.as_p }}
     <button type="submit">Submit</button>
 </form>
+
+<!-- In your base template or specific template -->
+{% load static %}
+<script src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+<script src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+
 {% endblock %}

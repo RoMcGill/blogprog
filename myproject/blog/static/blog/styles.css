@@ -1,8 +1,8 @@
 /* styles.css */
 
 nav {
-    background-color: #333;
-    padding: 10px;
+    background-color: #dbedff;
+    padding: 15px;
 }
 
 nav ul {
@@ -17,7 +17,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ nav ul li a:hover {
 
   /* Style for post item */
   .post-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #8993ff;
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
@@ -73,10 +73,16 @@ nav ul li a:hover {
   }
 
   /* Style for post author */
+  .post-author1 {
+    font-style: italic;
+    color: #8993ff;
+  }
+
   .post-author {
     font-style: italic;
-    color: #666;
+    color: #474747cc;
   }
+
 
   /* Style for post content */
   .post-content {
@@ -107,14 +113,14 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #8993ff;
     border-radius: 4px;
     box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
 /* Style the submit button */
 button[type="submit"] {
-    background-color: #4CAF50; /* Green */
+    background-color: #8993ff; /* Green */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -124,7 +130,7 @@ button[type="submit"] {
 
 /* Change the background color of the button when hovered */
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #8993ff;
 }
 
 /* Style the file input button */
@@ -137,7 +143,7 @@ input[type="file"] {
 }
 
 .file-input-wrapper button {
-    background-color: #008CBA; /* Blue */
+    background-color: 	#dbedff; /* Blue */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -171,7 +177,7 @@ input[type="file"] {
 
 /* Style for hero section */
 .hero {
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: 	#dbedff; /* Light gray background */
     padding: 100px 0;
     text-align: center;
   }
@@ -194,7 +200,7 @@ input[type="file"] {
   .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff; /* Blue button */
+    background-color: #8993ff; /* Blue button */
     color: #fff; /* White text */
     text-decoration: none;
     border-radius: 5px;
@@ -202,6 +208,13 @@ input[type="file"] {
   }
 
   .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #8993ff; /* Darker blue on hover */
   }
 
+  .expand-content {
+    cursor: pointer;
+    color:#8993ff;
+  }
+  .expand-content:hover{
+    color:#accbff;
+  }

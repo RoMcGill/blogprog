@@ -7,6 +7,7 @@ urlpatterns = [
     path('add/', views.add_blog_post, name='add_blog_post'),
     path('logout/', views.logout_view, name='logout'),
     path('blog-content/', views.blog_content, name='blog_content'),
-    
+     path('edit/<int:post_id>/', views.edit_blog_post, name='edit_blog_post'),
+
 
 ]
