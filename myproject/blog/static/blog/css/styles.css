@@ -1,0 +1,308 @@
+/* styles.css */
+nav {
+  background-color: #dbedff;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+nav .title {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  /* Removed margin-top for better alignment */
+  margin-right: 20px; /* Space between "Pure form" and links */
+}
+
+nav .title .pure {
+  color:#e0627b;
+}
+
+.pure {
+  color:#e0627b;
+}
+
+.form {
+  color: #8059a1;
+}
+
+nav .title .form {
+  color: #8059a1;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  /* Removed margin-right as padding already adds space */
+}
+
+nav ul li {
+  display: inline-block; /* Changed to inline-block for better spacing */
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px; /* Added padding for better separation */
+}
+
+nav ul li a:hover {
+  color: lightgray;
+}
+
+/* styles.css */
+
+/* Style for container */
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('/static/blog/images/background3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+  /* Style for overall layout */
+/* Style for overall layout */
+/* Style for overall layout */
+
+/* Style for hero section */
+.hero1 {
+  background: #f8d085; /* Light coral background */
+  background-image: linear-gradient(to right, #7295ff 0%, #85dbf8 50%, #6453b0 100%);
+  /* Added vendor prefixes for animation compatibility */
+  animation: gradient 1s ease-in-out infinite alternate;
+  -webkit-animation: gradient 1s ease-in-out infinite alternate;
+  -moz-animation: gradient 1s ease-in-out infinite alternate;
+  -o-animation: gradient 1s ease-in-out infinite alternate;
+  color: #000000; /* White text for contrast */
+  text-align: center;
+  padding: 40px 0; /* Top and bottom padding */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Other styles remain the same */
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  /* Removed since title moved to "hero" section */
+}
+
+/* Style for empty message */
+.empty-message {
+  font-style: italic;
+  color: #888;
+}
+
+/* Style for blog container */
+.blog-container {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px; /* Padding around the blog content */
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 800px; /* Set a maximum width for responsiveness */
+}
+
+/* Style for post list */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for post item */
+.post-item {
+  border-bottom: 1px solid #ddd; /* Light gray border */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style for blog name */
+.blog-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333; /* Adjust color as needed */
+}
+
+/* Style for post title */
+.post-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style for post author */
+.post-author1,
+.post-author {
+  font-style: italic;
+  color: #8993ff; /* Purple color for author */
+}
+
+/* Style for post content */
+.post-content {
+  line-height: 1.6;
+}
+
+/* Additional styles for responsiveness (optional) */
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .post-title,
+  .blog-name {
+    font-size: 20px; /* Adjust font sizes for smaller screens */
+  }
+}
+
+  /* Add any additional styles as needed */
+
+
+.page-title {
+    font-size: 3em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333; /* Adjust the color as needed */
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin top as needed */
+}
+
+
+/* Add CSS styles for the form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Style the form inputs */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #8993ff;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Style the submit button */
+button[type="submit"] {
+    background-color: #8993ff; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Change the background color of the button when hovered */
+button[type="submit"]:hover {
+    background-color: #8993ff;
+}
+
+/* Style the file input button */
+input[type="file"] {
+    display: none; /* Hide the default file input button */
+}
+
+.file-input-wrapper {
+    position: relative;
+}
+
+.file-input-wrapper button {
+    background-color: 	#dbedff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Change the background color of the file input button when hovered */
+.file-input-wrapper button:hover {
+    background-color: #005F6B;
+}
+
+/* Style the file input label */
+.file-input-label {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+/* Style the selected file name */
+.selected-file {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Style the error messages */
+.error-message {
+    color: red;
+}
+
+/* styles.css */
+
+/* Style for hero section */
+
+.hero {
+  /* background-image: url('/static/blog/images/background2.png'); */
+  padding: 100px 0;
+  text-align: center;
+  background-size: cover; /* Fills the entire container */
+  background-position: center; /* Aligns the image at the center */
+
+}
+
+
+
+  /* Style for hero title */
+  .hero-title {
+    font-size: 48px;
+    color: #333; /* Dark gray text */
+    margin-bottom: 20px;
+  }
+
+  /* Style for hero subtitle */
+  .hero-subtitle {
+    font-size: 24px;
+    color: #666; /* Medium gray text */
+    margin-bottom: 40px;
+  }
+
+  /* Style for hero button */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8993ff; /* Blue button */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #8993ff; /* Darker blue on hover */
+  }
+
+  .expand-content {
+    cursor: pointer;
+    color:#8993ff;
+  }
+  .expand-content:hover{
+    color:#accbff;
+  }
