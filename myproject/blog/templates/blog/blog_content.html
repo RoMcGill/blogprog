@@ -1,7 +1,11 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="hero1">
+  <h1>Live stream of Blogs being created with <span class="pure">Pure</span> <span class="form">form</span></h1>
+</div>
+
+<div class="blog-container">
   {% if empty_message %}
   <p class="empty-message">{{ empty_message }}</p>
   {% else %}
@@ -17,8 +21,7 @@
       <p class="expand-content">Click to expand</p>
       <button class="edit-button" data-post-id="{{ post.id }}">Edit</button>
 
-      <!-- Add any additional fields you want to display -->
-    </li>
+      </li>
     {% endfor %}
   </ul>
   {% endif %}

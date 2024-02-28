@@ -1,93 +1,175 @@
 /* styles.css */
-
 nav {
-    background-color: #dbedff;
-    padding: 15px;
+  background-color: #dbedff;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+nav .title {
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  /* Removed margin-top for better alignment */
+  margin-right: 20px; /* Space between "Pure form" and links */
+}
+
+nav .title .pure {
+  color:#e0627b;
+}
+
+.pure {
+  color:#e0627b;
+}
+
+.form {
+  color: #8059a1;
+}
+
+nav .title .form {
+  color: #8059a1;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  /* Removed margin-right as padding already adds space */
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+  display: inline-block; /* Changed to inline-block for better spacing */
 }
 
 nav ul li a {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 0 10px; /* Added padding for better separation */
 }
 
 nav ul li a:hover {
-    color: lightgray;
+  color: lightgray;
 }
 
 /* styles.css */
 
 /* Style for container */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  margin: 0 auto;
+  padding: 20px;
+  background-image: url('/static/blog/images/background3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
 
-  /* Style for page title */
-  .page-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
+  /* Style for overall layout */
+/* Style for overall layout */
+/* Style for overall layout */
 
-  /* Style for empty message */
-  .empty-message {
-    font-style: italic;
-    color: #888;
-  }
+/* Style for hero section */
+.hero1 {
+  background: #f8d085; /* Light coral background */
+  background-image: linear-gradient(to right, #7295ff 0%, #85dbf8 50%, #6453b0 100%);
+  /* Added vendor prefixes for animation compatibility */
+  animation: gradient 1s ease-in-out infinite alternate;
+  -webkit-animation: gradient 1s ease-in-out infinite alternate;
+  -moz-animation: gradient 1s ease-in-out infinite alternate;
+  -o-animation: gradient 1s ease-in-out infinite alternate;
+  color: #000000; /* White text for contrast */
+  text-align: center;
+  padding: 40px 0; /* Top and bottom padding */
+}
 
-  /* Style for post list */
-  .post-list {
-    list-style: none;
-    padding: 0;
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
   }
-
-  /* Style for post item */
-  .post-item {
-    border-bottom: 1px solid #8993ff;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+  50% {
+    background-position: 100% 0%;
   }
+  100% {
+    background-position: 0% 0%;
+  }
+}
 
-  /* Style for blog name */
+/* Other styles remain the same */
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  /* Removed since title moved to "hero" section */
+}
+
+/* Style for empty message */
+.empty-message {
+  font-style: italic;
+  color: #888;
+}
+
+/* Style for blog container */
+.blog-container {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px; /* Padding around the blog content */
+  margin: 0 auto; /* Center the container horizontally */
+  max-width: 800px; /* Set a maximum width for responsiveness */
+}
+
+/* Style for post list */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for post item */
+.post-item {
+  border-bottom: 1px solid #ddd; /* Light gray border */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style for blog name */
+.blog-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333; /* Adjust color as needed */
+}
+
+/* Style for post title */
+.post-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Style for post author */
+.post-author1,
+.post-author {
+  font-style: italic;
+  color: #8993ff; /* Purple color for author */
+}
+
+/* Style for post content */
+.post-content {
+  line-height: 1.6;
+}
+
+/* Additional styles for responsiveness (optional) */
+@media (max-width: 768px) {
+  .blog-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .post-title,
   .blog-name {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333; /* Adjust color as needed */
+    font-size: 20px; /* Adjust font sizes for smaller screens */
   }
-
-  /* Style for post title */
-  .post-title {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  /* Style for post author */
-  .post-author1 {
-    font-style: italic;
-    color: #8993ff;
-  }
-
-  .post-author {
-    font-style: italic;
-    color: #474747cc;
-  }
-
-
-  /* Style for post content */
-  .post-content {
-    line-height: 1.6;
-  }
+}
 
   /* Add any additional styles as needed */
 
@@ -176,11 +258,17 @@ input[type="file"] {
 /* styles.css */
 
 /* Style for hero section */
+
 .hero {
-    background-color: 	#dbedff; /* Light gray background */
-    padding: 100px 0;
-    text-align: center;
-  }
+  /* background-image: url('/static/blog/images/background2.png'); */
+  padding: 100px 0;
+  text-align: center;
+  background-size: cover; /* Fills the entire container */
+  background-position: center; /* Aligns the image at the center */
+
+}
+
+
 
   /* Style for hero title */
   .hero-title {
