@@ -7,6 +7,7 @@ nav {
   background-color: #dbedff;
   padding: 15px;
   position: fixed;
+  padding-bottom: 15px;
   top: 0;
   right: 0;
   width: 100%;
@@ -68,7 +69,7 @@ nav ul li a:hover {
 .container {
   margin: 0 auto;
   padding: 20px;
-  background-image: url('/static/blog/images/background3.png');
+  background-image: url('/static/blog/images/background5.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 50%;
@@ -80,17 +81,16 @@ nav ul li a:hover {
 
 /* Style for hero section */
 .hero1 {
-  background: #f8d085; /* Light coral background */
-  background-image: linear-gradient(to right, #7295ff 0%, #85dbf8 50%, #6453b0 100%);
+  background-color: rgba(255, 194, 230, 0.3);
   /* Added vendor prefixes for animation compatibility */
   animation: gradient 1s ease-in-out infinite alternate;
   -webkit-animation: gradient 1s ease-in-out infinite alternate;
   -moz-animation: gradient 1s ease-in-out infinite alternate;
   -o-animation: gradient 1s ease-in-out infinite alternate;
-  color: #000000; /* White text for contrast */
+  color: #ffffff; /* White text for contrast */
   text-align: center;
-  padding: 40px 0; /* Top and bottom padding */
-  height: 50px;
+  padding: 40px ; /* Top and bottom padding */
+  height: 30px;
 }
 
 @keyframes gradient {
@@ -116,12 +116,12 @@ nav ul li a:hover {
 /* Style for empty message */
 .empty-message {
   font-style: italic;
-  color: #888;
+  color: #c3c3c3;
 }
 
 /* Style for blog container */
 .blog-container {
-  background-color: #f5f5f5; /* Light gray background */
+  background-color: #ffbce114; /* Light gray background */
   padding: 20px; /* Padding around the blog content */
   margin: 0 auto; /* Center the container horizontally */
   max-width: 800px; /* Set a maximum width for responsiveness */
@@ -272,33 +272,48 @@ input[type="file"] {
   background-position: center; /* Aligns the image at the center */
 
 }
+.hero-text{
+  float: right;
+  padding-bottom: 100px;
+  padding-left: 100px;
+  background-color: rgba(255, 194, 230, 0.3);
+  border-radius: 40px;
+}
+/* Style for hero container */
+.hero-container {
+  position: relative;
 
+}
 
+/* Style for hero title */
+.hero-title {
+  font-size: 48px;
+  color: #ffffff; /* Dark gray text */
+  margin-bottom: 20px;
+}
 
-  /* Style for hero title */
-  .hero-title {
-    font-size: 48px;
-    color: #333; /* Dark gray text */
-    margin-bottom: 20px;
-  }
+/* Style for hero subtitle */
+.hero-subtitle {
+  font-size: 24px;
+  color: #000000; /* Medium gray text */
+  margin-bottom: 40px;
+}
 
-  /* Style for hero subtitle */
-  .hero-subtitle {
-    font-size: 24px;
-    color: #666; /* Medium gray text */
-    margin-bottom: 40px;
-  }
+/* Style for hero button */
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #8993ff; /* Blue button */
+  color: #fff; /* White text */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 
-  /* Style for hero button */
-  .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #8993ff; /* Blue button */
-    color: #fff; /* White text */
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
+}
+
 
   .btn:hover {
     background-color: #8993ff; /* Darker blue on hover */
@@ -312,10 +327,12 @@ input[type="file"] {
     color:#accbff;
   }
 
-
+  .edit-button{
+    float: right;
+  }
 
   .button1 {
-    --color: #1d8eff;
+    --color: #e0627b;
     font-family: inherit;
     display: inline-block;
     width: 8em;
