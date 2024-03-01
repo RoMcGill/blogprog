@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class BlogCreation(models.Model):
-    blog_name = models.CharField(max_length=100)
+
     title = models.CharField(max_length=100)
     content = models.TextField()  # Use TextField for longer text content
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)

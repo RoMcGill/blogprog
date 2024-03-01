@@ -64,8 +64,8 @@ nav ul li a:hover {
 .container {
   margin: 0 auto;
   padding: 20px;
-  background-image: url('/static/blog/images/background3.png');
-  background-repeat: no-repeat;
+
+ 
   background-size: cover;
   width: 100%;
 }

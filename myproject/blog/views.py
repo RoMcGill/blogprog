@@ -48,24 +48,22 @@ def logout_view(request):
     return redirect('home')
 
 
-
 def add_blog_post(request):
     if request.method == 'POST':
         form = BlogPostForm(request.POST, request.FILES)
         if form.is_valid():
             new_blog_post = BlogCreation(  # Corrected
-            blog_name=form.cleaned_data['blog_name'],
-            title=form.cleaned_data['title'],
-            content=form.cleaned_data['content'],
-            author=request.user
-            # Add additional fields as needed
-        )
+               
+                title=form.cleaned_data['title'],
+                content=form.cleaned_data['content'],
+                author=request.user,
+                # Add additional fields as needed
+            )
             new_blog_post.save()
-            return render(request, 'blog/base.html')
+            return redirect('blog_content')  # Redirect to blog_content view
     else:
         form = BlogPostForm()
     return render(request, 'blog/add_blog.html', {'form': form})
-
 
 def blog_content(request):
     posts = BlogCreation.objects.all()
@@ -91,7 +89,7 @@ def edit_blog_post(request, post_id):
         form = BlogPostEditForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            return redirect('blog/blog_content.html')
+            return redirect('blog_content')  # Redirect to blog_content view
     else:
         form = BlogPostEditForm(instance=post)
 

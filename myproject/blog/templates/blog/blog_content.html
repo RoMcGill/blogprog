@@ -11,6 +11,7 @@
   {% else %}
   <ul class="post-list">
     {% for post in posts %}
+    {% if post.author == request.user %}
     <h1 class="blog-name">{{ post.blog_name }}</h1>
     <li class="post-item">
       <h2 class="post-title">{{ post.title }}</h2>
@@ -21,8 +22,8 @@
       <button class="expand-content button1">Click to expand</button>
       <button class="edit-button" data-post-id="{{ post.id }}">Edit</button>
 
-      </li>
-    {% endfor %}
+    </li>
+    {% endif %} {% endfor %}
   </ul>
   {% endif %}
 </div>
@@ -55,4 +56,3 @@
 
 </script>
 {% endblock %}
-

@@ -10,7 +10,17 @@
       <h1 class="hero-title">Welcome to <span class="pure">Pure</span></h1>
       <p class="hero-subtitle">A Journaling Experience with No Distractions</p>
     </div>
-      <a href="{% url 'add_blog_post' %}"Blogs class="button1">Get writing</a>
+  </div>
+  {% if not request.user.is_authenticated %}
+    <a href="{% url 'add_blog_post' %}" class="button1">Sign up</a>
+    <a href="{% url 'login' %}" class="button1">Login</a>
+  {% else %}
+    <a href="{% url 'add_blog_post' %}" class="button1">Get writing</a>
+    <a href="{% url 'logout' %}" class="button1">Log out</a>
+    
+  {% endif %}
+  <div id="app"></div>
+
       <div id="app"></div>
 
 

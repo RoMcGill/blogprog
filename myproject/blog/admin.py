@@ -4,7 +4,7 @@ from .models import BlogCreation
 
 class BlogPostAdmin(admin.ModelAdmin):
     # Specify the fields you want to display in the list view
-    list_display = ('title', 'blog_name')  # Example list display
+    list_display = ('title', 'content')  # Example list display
 
     # Optionally, customize the edit form
     fields = ('title', 'content')  # Example fields for the edit form
